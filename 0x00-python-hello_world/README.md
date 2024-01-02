@@ -1,1 +1,1 @@
-This is my python README file
+HELLO WORLD PYTHON PROJECT
