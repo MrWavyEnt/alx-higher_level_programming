@@ -3,18 +3,23 @@
 /**
  * dlistint_len - Returns the number of elements in a linked dlistint_t list
  * @h: Pointer to the head of the doubly-linked list
- *
  * Return: The number of elements in the list
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	const dlistint_t *current = h;
-	size_t node_count = 0;
-	
-	while (current != NULL)
+	int count;
+
+	count = 0;
+
+	if (h == NULL)
+		return (count);
+	while (h->prev != NULL)
+		h = h->prev;
+
+	while (h != NULL)
 	{
-		current = current->next;
-		node_count++;
+		count++;
+		h = h->next;
 	}
-	return (node_count);
+	return (count);
 }
