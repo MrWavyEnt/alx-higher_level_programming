@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-import sys
-
-def add_arguments(arguments):
-    return sum(int(arg) for arg in arguments)
-
 if __name__ == "__main__":
-    # Extract command line arguments excluding the script name
-    arguments = sys.argv[1:]
+    """Print the addition of all arguments."""
+    import sys
 
-    # Check if there are any arguments
-    if arguments:
-        # Calculate the sum and print the result
-        result = add_arguments(arguments)
-        print(result)
-    else:
-        print("No arguments provided.")
+    total = 0
+    for i in range(len(sys.argv) - 1):
+        total += int(sys.argv[i + 1])
+    print("{}".format(total))
